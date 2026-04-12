@@ -25,6 +25,7 @@ This demo showcases the **full BPFense system**, including advanced behavioral d
 
 * eBPF-based kernel observability
 * AI-driven anomaly detection
+* Quantum-inspired Behavioral Intelligence for attack modeling
 * Behavioral intelligence modeling
 
 to detect and respond to threats in real time.
@@ -115,14 +116,14 @@ Response Engine (Kill / Alert)
 ### Build
 
 ```bash id="m4k7pt"
+make clean
 make
 ```
 
 ### Run
 
 ```bash id="hvx5ec"
-sudo ./agent
-```
+sudo -E  ./build/loader
 
 ---
 
