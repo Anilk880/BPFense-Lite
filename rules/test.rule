@@ -1,0 +1,6 @@
+rule=test_exec_file
+enabled=1
+match=bash
+match=sh
+match=cat
+match=passwd

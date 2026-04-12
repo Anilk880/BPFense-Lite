@@ -1,0 +1,73 @@
+sudo -E  ./build/loader
+[SECURITY] Verifying ML model signature...
+[WARNING] Public key not found, skipping verification
+[SECURITY] Model signature VALID. Proceeding...
+[rule_engine] loaded 1 rules
+[rule_engine] loaded 1 rules
+[AI] Initialized (Lite Mode)
+[resolver] loaded 8 pod mappings
+[rule_engine] watcher thread started
+[rule_engine] watching ./rules for changes...
+[+] XDP network sensor attached to cni0
+[feature_engine] total rules: 6
+[NETWORK] pod=coredns-695cbbfcb9-lswkb ns=kube-system -> 192.168.29.113:6443 proto=6
+[AI] analyzing network event...
+[AI] pod=test-bpfence-pod score=0.5000 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.2000 severity=MEDIUM rule=1
+[ACTION] ALERT pod=test-bpfence-pod
+[AI] pod=test-bpfence-pod score=0.2000 severity=MEDIUM rule=1
+[ACTION] ALERT pod=test-bpfence-pod
+[AI] pod=test-bpfence-pod score=0.5000 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.5000 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.5000 severity=NORMAL rule=0
+[NETWORK] pod=metrics-server-c8774f4f4-ds82j ns=kube-system -> 192.168.29.113:6443 proto=6
+[AI] analyzing network event...
+[AI] pod=test-bpfence-pod score=0.5000 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AGENT] Escalation triggered for pod=test-bpfence-pod count=3
+[AI] pod=test-bpfence-pod score=0.1500 severity=HIGH rule=1
+[ACTION] KILL_POD pod=test-bpfence-pod
+[AI] pod=test-bpfence-pod score=0.1500 severity=MEDIUM rule=1
+[ACTION] ALERT pod=test-bpfence-pod
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+[AI] pod=test-bpfence-pod score=0.4500 severity=NORMAL rule=0
+^C
+Shutting down sensors...
+

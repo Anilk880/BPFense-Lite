@@ -1,0 +1,22 @@
+# Build files
+*.o
+*.out
+*.log
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+
+# Binaries
+agent
+*.bin
+
+# OS junk
+.DS_Store
+
+# Env / secrets
+.env
+
+# Models (optional, if large/private)
+models/*.bin
