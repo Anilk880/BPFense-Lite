@@ -7,7 +7,6 @@ BPFense Lite is a **lightweight runtime security engine** that uses **eBPF + AI 
 🚀 This repository provides a **simplified version** of a larger runtime security system, focusing on core detection and response capabilities.
 
 💡 Built as a **final project** demonstrating system design, kernel observability, and AI-driven security.
-🤝 Open to collaboration and contributions!
 
 ---
 
