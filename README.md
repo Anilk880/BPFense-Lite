@@ -1,66 +1,102 @@
 # 🛡️ BPFense Lite
 
-### Lightweight eBPF Runtime Security with AI Detection
+### eBPF Runtime Security Engine (AI + Behavioral Detection)
 
-BPFense Lite is a **lightweight runtime security engine** that uses **eBPF + AI + rule-based detection** to monitor, detect, and respond to threats in real time.
+BPFense Lite is a **lightweight, high-performance runtime security engine** built using **eBPF, rule-based detection, and AI-assisted anomaly analysis**.
 
-🚀 This repository provides a **simplified version** of a larger runtime security system, focusing on core detection and response capabilities.
+It focuses on a **minimal, fast, and production-relevant detection core**—designed to operate with **low overhead while maintaining real-time threat visibility and response**.
 
-💡 Built as a **final project** demonstrating system design, kernel observability, and AI-driven security.
-
----
-
-## 🎥 Full System Demo (Complete Solution)
-
-This demo showcases the **full BPFense system**, including advanced behavioral detection, AI pipeline, and real-time response.
-
-👉 **Watch Full Demo:** https://www.youtube.com/shorts/X7cHbR0-Am4
+> ⚡ Built as a practical system to demonstrate **kernel observability, runtime detection, and security engineering at scale**
 
 ---
 
-## 🧠 Full System Overview (Advanced)
+## 🚀 Why BPFense Lite
 
-**BPFense** is a next-generation **runtime security and intelligent monitoring platform** that combines:
+Most runtime security tools become **heavy and complex**, impacting performance.
 
-* eBPF-based kernel observability
-* AI-driven anomaly detection
-* Quantum-inspired Behavioral Intelligence for attack modeling
-* Behavioral intelligence modeling
+**BPFense Lite takes the opposite approach:**
 
-to detect and respond to threats in real time.
-
-It is designed for:
-
-* ☸️ Kubernetes environments
-* 🏭 Intelligent automation systems
-* 🔌 Embedded platforms
-
-enabling **adaptive, real-time decision-making across diverse systems**.
+* Minimal core
+* Deterministic detection pipeline
+* Real-time response
+* Designed to scale without adding latency
 
 ---
 
-## ⚡ Full System Capabilities
+## 🎥 Demo (Full System Vision)
 
-* ⚡ **Kernel-Level Visibility** — eBPF (LSM + XDP) for deep system observability
-* 🤖 **AI-Driven Detection** — ML-based anomaly detection for zero-day threats
-* 🧠 **Behavioral Intelligence Engine** — Multi-stage attack correlation
-* 🔗 **Entanglement Modeling** — Cross-signal relationship analysis
-* 🔥 **Real-Time Risk Engine** — Adaptive scoring and automated response
-* 🏭 **Intelligent Automation Ready** — Dynamic monitoring and control
-* 🔌 **Embedded System Support** — Lightweight real-time enforcement
+This demo shows the **complete BPFense architecture**, including advanced detection and AI pipeline:
+
+👉 https://www.youtube.com/shorts/X7cHbR0-Am4
+
+> Note: This repository contains the **Lite (core) version**, focused on detection fundamentals.
 
 ---
 
-## 🧪 Example Output (Lite Version)
+## 🧠 What This Project Demonstrates
 
-```text id="a9u3mv"
-[AI][NORMAL] pod=test-bpfence-pod score=0.45
+* eBPF-based **kernel-level observability**
+* Runtime event collection (process, network)
+* **Behavioral detection using temporal correlation**
+* Hybrid detection (**rules + AI scoring**)
+* **Real-time response system** (kill / alert)
+* Kubernetes-aware monitoring (pod-level context)
+
+---
+
+## ⚡ Core Features
+
+* ⚡ **Low-overhead eBPF monitoring**
+* 🔍 **Runtime + network event visibility**
+* 🧠 **Behavioral detection via event correlation**
+* 🤖 **AI-assisted anomaly scoring**
+* 🚨 **Escalation-based detection logic**
+* ☸️ **Kubernetes pod awareness**
+* 🔥 **Automated response (kill pod, alert)**
+
+---
+
+## 🧠 Detection Approach
+
+BPFense Lite uses a **layered detection model**:
+
+1. **Event Collection (eBPF)**
+
+   * Syscalls, process execution, network activity
+
+2. **Feature Extraction**
+
+   * Normalize events into structured signals
+
+3. **Detection Engines**
+
+   * Rule-based detection (fast, deterministic)
+   * AI-based scoring (behavioral anomalies)
+
+4. **Correlation Layer**
+
+   * Detects **multi-stage attacks using temporal relationships**
+
+5. **Decision Engine**
+
+   * Escalates based on repeated or high-risk patterns
+
+6. **Response Engine**
+
+   * Kill pod / alert / log
+
+---
+
+## 🧪 Example Output
+
+```text
+[AI][NORMAL] pod=test-bpfense-pod score=0.45
 
 [AGENT] Escalation triggered (repeated anomalies)
 
-[AI][HIGH] pod=test-bpfence-pod anomaly detected (rule=1)
-[ACTION] KILL_POD pod=test-bpfence-pod
-[ACTION] ALERT pod=test-bpfence-pod
+[AI][HIGH] pod=test-bpfense-pod anomaly detected (rule=1)
+[ACTION] KILL_POD pod=test-bpfense-pod
+[ACTION] ALERT pod=test-bpfense-pod
 
 [NETWORK] pod=coredns ns=kube-system -> 192.168.29.1:53 proto=UDP
 [AI] analyzing network event...
@@ -68,27 +104,14 @@ enabling **adaptive, real-time decision-making across diverse systems**.
 
 👉 Full logs: `tests/test_logs.txt`
 
-> Note: IPs are from a local test environment.
-
 ---
 
-## ⚡ Features (Lite)
+## 🧱 Architecture
 
-* ✅ eBPF-based low-overhead monitoring
-* ✅ Hybrid detection (AI + rules)
-* ✅ Kubernetes pod awareness
-* ✅ Network + runtime event analysis
-* ✅ Escalation-based detection logic
-* ✅ Automated response (kill pod, alert)
-
----
-
-## 🧠 Architecture (Lite)
-
-```text id="h2yxv5"
+```
 eBPF Sensors (Kernel Space)
         ↓
-Userspace Agent Engine
+Userspace Agent
         ↓
 Feature Extraction
         ↓
@@ -107,36 +130,37 @@ Response Engine (Kill / Alert)
 
 ### Requirements
 
-* Linux (with eBPF support)
-* clang, llvm
+* Linux (eBPF enabled kernel)
+* clang / llvm
 * libbpf
 * gcc
 
 ### Build
 
-```bash id="m4k7pt"
+```bash
 make clean
 make
 ```
 
 ### Run
 
-```bash id="hvx5ec"
-sudo -E  ./build/loader
+```bash
+sudo -E ./build/loader
+```
 
 ---
 
 ## 📂 Project Structure
 
-```text id="qg6r9k"
+```
 .
-├── ai-engine/        # ML training + inference
 ├── ebpf/             # Kernel-level sensors
-├── include/          # Shared headers
-├── userspace/        # Core engine logic
+├── userspace/        # Detection + response engine
+├── ai-engine/        # ML inference logic
 ├── rules/            # Detection rules
-├── scripts/          # Utility scripts
-├── tests/            # Demo and logs
+├── include/          # Shared headers
+├── scripts/          # Utilities
+├── tests/            # Logs + test cases
 ├── Makefile
 └── README.md
 ```
@@ -145,9 +169,31 @@ sudo -E  ./build/loader
 
 ## 🔐 Security Notes
 
-* Designed for safe interaction with kernel via eBPF
-* Supports model verification and signing
-* Intended for **research and defensive security use only**
+* Safe kernel interaction via eBPF (no kernel modules)
+* Designed for **runtime detection, not prevention-only**
+* Supports future **model verification and integrity checks**
+
+---
+
+## 🚀 Roadmap
+
+* O(1) behavior state tracking (hash-map based)
+* Advanced anomaly detection models
+* Policy-driven response engine
+* CLI interface (`monitor`, `train`, `analyze`)
+* Full system open-source release
+
+---
+
+## ⚠️ Scope Clarification
+
+This repository contains the **Lite detection core only**.
+
+The full system (shown in demo) includes:
+
+* Advanced behavioral modeling
+* Distributed detection pipeline
+* Extended AI capabilities
 
 ---
 
@@ -159,32 +205,13 @@ sudo -E  ./build/loader
 
 ---
 
-## 🚀 Future Improvements
-
-* CLI interface (`--monitor`, `--train`)
-* Advanced anomaly detection models
-* Policy-based response engine
-* Full system open-source release
-
----
-
-## ⚠️ Usage Notice
-
-BPFense Lite is provided for educational and research purposes.
-
-The full system architecture, advanced detection models, and extended capabilities shown in the demo are part of ongoing development and are not included in this repository.
-
----
-
 ## 📜 License
 
-This project is licensed under the terms of the LICENSE file.
+See `LICENSE` file.
 
 ---
 
-## ⭐ Acknowledgment
+## ⭐ Final Note
 
-Inspired by modern runtime security tools and built as a **learning + practical security project using eBPF**.
-
----
+BPFense Lite is not just a demo—it’s a **foundation for building production-grade runtime security systems using eBPF**.
 
