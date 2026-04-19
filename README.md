@@ -151,21 +151,6 @@ sudo -E  ./build/loader
 
 ---
 
-## 🤝 Collaboration
-
-🚀 This project is open for collaboration!
-
-If you're interested in:
-
-* eBPF development
-* AI/ML for security
-* Kubernetes runtime security
-* Intelligent system monitoring
-
-👉 Feel free to connect and contribute.
-
----
-
 ## 📬 Contact
 
 **Anil Kumar**
